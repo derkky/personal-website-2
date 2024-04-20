@@ -30,7 +30,7 @@
     {
         "company": "SUPESU",
         "title": "Full Stack Developer Intern",
-        "duration": "May. 2022 - Jul. 2022",
+        "duration": "Dec. 2021 - Aug. 2022",
         "description": "I developed a Shopify app which uses AI to recommend clothing sizes to customers given their body dimensions. The app also has an admin panel for merchants to fine-tune the recommendation logic.",
         "tech": "MongoDB, ExpressJS, React, GraphQL, scikit-learn, R"
     },
