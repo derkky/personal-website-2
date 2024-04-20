@@ -6,12 +6,12 @@ import Root from './pages/Root.jsx'
 import Contact from './pages/Contact.jsx'
 import './globals.css'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import ThemeProvider from './components/ThemeProvider.jsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,

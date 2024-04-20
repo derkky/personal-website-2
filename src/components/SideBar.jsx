@@ -13,7 +13,7 @@ const SideBar = (props) => {
                         sections.map(section => (
                             <li key={section.name}>
                                 <Link to={section.link}>
-                                    <Button variant="link" className="pl-0 text-foreground">
+                                    <Button variant="link" className="pl-0 text-foreground duration-500">
                                         {section.name}
                                     </Button>
                                 </Link>

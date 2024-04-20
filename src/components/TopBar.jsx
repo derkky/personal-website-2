@@ -57,7 +57,7 @@ const TopBar = (props) => {
                             <Link to={section.link} key={section.name}>
                                 <Button 
                                     variant="link" 
-                                    className={"text-foreground " + (selectedSection == section.name ? "underline" : "")}
+                                    className={"duration-500 text-foreground " + (selectedSection == section.name ? "underline" : "")}
                                     onClick={() => setSelectedSection(section.name)}
                                 >
                                     {section.name}
