@@ -4,16 +4,21 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Button } from "./ui/button"
-import { useCallback, useState } from "react"
+import { useEffect, useState } from "react"
 import ButtonGroup from "./ButtonGroup"
 import sections from "../data/sections.json"
 
 
-const TopBar = (props) => {
+const TopBar = () => {
 
-    const [selectedSection, setSelectedSection] = useState("About")
+    const { pathname } = useLocation()
+    const [selectedSection, setSelectedSection] = useState(pathname)
+
+    useEffect(() => {
+        setSelectedSection(pathname)
+    }, [pathname])
 
     return (
         <div className="flex flex-col items-fill w-full fixed bg-background border-b-2">
@@ -55,9 +60,9 @@ const TopBar = (props) => {
                     sections.map(
                         section =>
                             <Link to={section.link} key={section.name}>
-                                <Button 
-                                    variant="link" 
-                                    className={"duration-500 text-foreground " + (selectedSection == section.name ? "underline" : "")}
+                                <Button
+                                    variant="link"
+                                    className={"duration-500 text-foreground " + (selectedSection == section.link ? "underline" : "")}
                                     onClick={() => setSelectedSection(section.name)}
                                 >
                                     {section.name}
