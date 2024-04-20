@@ -10,6 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ThemeProvider from './components/ThemeProvider.jsx'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
       }
     ]
   },
-]);
+], {
+  basename: import.meta.env.BASE_URL
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
