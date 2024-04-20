@@ -1,15 +1,10 @@
 import ThemeToggle from "../components/ThemeToggle";
-import { useCallback } from "react";
 
 
 const IconButton = ({ children, url }) => {
-    
-    const handleClick = useCallback(() => {
-        window.open(url)
-    },[url])
 
     return (
-        <a href="#" onClick={handleClick}>
+        <a href={url} target="_blank">
             <div className="rounded-full hover:bg-muted">
                 {children}
             </div>

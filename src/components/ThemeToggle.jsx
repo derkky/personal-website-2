@@ -29,7 +29,7 @@ const ThemeToggle = (props) => {
     }, [theme])
 
     return (
-        <a href="#" onClick={handleClick}>
+        <a onClick={handleClick} className="hover:cursor-pointer">
             <div className="rounded-full hover:bg-muted">
                 {theme == "light" ? <Moon /> : <Sun />}
             </div>
