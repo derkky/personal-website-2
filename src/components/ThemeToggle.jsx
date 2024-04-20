@@ -1,5 +1,5 @@
 import { ThemeContext } from "./ThemeProvider"
-import { useContext } from "react"
+import { useContext, useCallback } from "react"
 const Moon = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -20,13 +20,13 @@ const ThemeToggle = (props) => {
 
     const { theme, setTheme } = useContext(ThemeContext)
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         if (theme == "light") {
             setTheme("dark")
         } else {
             setTheme("light")
         }
-    }
+    }, [theme])
 
     return (
         <a href="#" onClick={handleClick}>

@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import About from './pages/About.jsx'
+import Experience from './pages/Experience.jsx'
 import Root from './pages/Root.jsx'
+import Contact from './pages/Contact.jsx'
 import './globals.css'
 import {
   createBrowserRouter,
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <About />
+      },
+      {
+        path: "/experience",
+        element: <Experience />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       }
     ]
   },
