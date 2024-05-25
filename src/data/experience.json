@@ -3,42 +3,97 @@
         "company": "Singtel",
         "title": "Data Scientist - Group Enterprise",
         "duration": "Jan. 2024 - Present",
-        "description": "I built an internal GenAI tool to streamline the bid & tender process for Singtel Enterprise's sales team. I also built core features for a chatbot app to facilitate information retrieval for the service management team.",
-        "tech": "FastAPI, SQL, React, Langchain"
+        "description": "I built a proposal generator GenAI tool to streamline the bid & tender process for Singtel Enterprise's sales team. I also built core features for a SQL-enabled chatbot app to facilitate information retrieval for the service management team.",
+        "tech": "FastAPI, SQL, React, Langchain",
+        "techDetails": [
+            {
+                "detailTitle": "Proposal Generator",
+                "detailDescription": [
+                    "I was tasked with developing a MVP for a web-app to allow our sales team to generate effective proposals from Requests for Proposal (RFP) documents. Furthermore, I was given only 20 weeks to do this. I developed ~80% of the required features within 5 weeks, with the remaining ~20% stalled due to external dependencies.",
+                    "Proposal generation was accomplished through a multi-step RAG chain. Firstly, the proposal structure is generated based on past similar proposals. Finally, the content for each section is generated based on the RFP, various knowledge vector DBs, and past similar proposals.",
+                    "The app is fully integrated with Singtel AD, and users are able to sign in with SSO via their Singtel email accounts. As a side effect, the app is also well integrated with Microsoft Graph API - allowing us to explore additional GenAI features involving users' emails, sharepoint content, etc.",
+                    "My tech-stack consisted of FastAPI for backend and React for frontend. I used PostGres as my app DB, and also explored Qdrant and FAISS as vector DBs. For GenAI, I used a GPT 3.5 model hosted on Azure OpenAI service (we couldn't use the public GPT 3.5 due to data sensitivity concerns) which I interfaced with using the LangChain framework. The app was designed in an asynchronus manner to better handle concurrency."
+                ]
+            },
+            {
+                "detailTitle": "SQL-Enabled Chatbot App",
+                "detailDescription": [
+                    "I was tasked with developing the backend and chatbot functionality for a chatbot web-app. One of the app's main features aims to allow users to ask a GenAI agent a question pertaining to some database in Singtel. The agent would then generate the relevant SQL query and execute it, using the results to answer the user's question. This would greatly facilitate information retrieval for the end users, whose current practice involved looking through multiple cumbersome and outdated systems to get necessary information.",
+                    "Since SQL generation is a complex task which was further confounded by Singtel's highly complex database schemas - a significant amount of prompt-engineering and customization was required to develop an accurate chatbot. Ultimately, the final design involved a complex LLM chain with multiple routes to handle different complex scenarios, as well as a custom SQLAgent with a custom toolkit to better handle general queries on Singtel's databases.", 
+                    "I primarily used FastAPI for backend with SQLite as the app DB. LangChain was used as the GenAI framework, with a GPT3.5 model hosted on Azure OpenAI service as the underlying LLM. "
+                ]
+            }
+        ]
     },
     {
         "company": "Singtel",
         "title": "Data Scientist - Group IT",
         "duration": "Jul. 2023 - Dec. 2023",
         "description": "I did product analytics to identify improvement opportunities for the MySingtel app and used it to design a POC with better UX. I also drove the R&D of an AI enabled real-time coupon allocator to enhance user experience and conversion rate in the roaming funnel.",
-        "tech": "Matplotlib, PyTorch, scikit-learn, PuLP, R, FastAPI"
+        "tech": "Matplotlib, PyTorch, scikit-learn, PuLP, R, FastAPI",
+        "techDetails": [
+            {
+                "detailTitle": "Product Analytics for MySingtel App (MSTA)",
+                "detailDescription": [
+                    "I was in charge of analysing customer behavior data on MSTA using FullStory, a data platform which tracks in-app interactions. The main goal was to derive insights to ultimately enhance user experience in the roaming funnel and increase conversion rates.",
+                    "Using process mining, I modelled user behavior patterns as a Directly-Follows Graph (DFG) and identified the most common user flows within the roaming funnel. I then identified the key interactions preceding drop-offs as potential pain points which deterred users from converting. Next, I scraped Singtel's social media pages and app store reviews and conducted topic modelling to identify common themes for customer complaints related to roaming.",
+                    "With this, I worked with UI designers and software engineers to design an enhanced roaming funnel UI which sought to address the identified pain points. Research findings and the proposed redesign were presented to senior leaders to seek approval for an A/B test to measure the effectiveness."
+                ]
+            },
+            {
+                "detailTitle": "Real-Time Coupon Allocation POC",
+                "detailDescription": [
+                    "Inspired by a white-paper by AliBaba researchers on an AI-powered real-time coupon allocation system which boosted conversions on their platform at a minimal cost, I spearheaded an initiative to develop a POC to accomplish the same thing in the Singtel app's roaming funnel.",
+                    "The premise of the system was to detect a user's conversion probability based on their behavior within the roaming funnel (i.e which buttons they tapped, how long they spend on a screen, etc). This conversion probability is further conditioned on a particular coupon allocation. For instance, if we had total available coupon types, we would predict the user's conversion given each of these coupons. Hence, for each user, we would have a vector of predicted conversion probabilities (1 for each available coupon type). With this, we can apply linear programming to determine the optimal coupon allocation strategy to maximise total conversion while constrained to budgetary constraints. Since the allocation is done in real-time, we must employ an online linear-programming strategy.",
+                    "Firstly, I trained an AI model using customer behavior data retrieved from FullStory. Through experimenting with various algorithms, including Time-Aware LSTMs, transformer networks, and gradient boosting, I determined that the most accurate algorithm was a regular LSTM. Next, to develop the online linear programming model, I implemented an algorithm introduced in another white-paper which proposed using the dual of the offline LP problem to calculate thresholds (based on the solution of the dual variables) which can be used to determine the solution for the primal problem in an online manner.",
+                    "Finally, I architectured a solution to allow the Singtel app to interface with the coupon allocation algorithm and developed a POC. This POC was presented to senior leaders."
+                ]
+            }
+        ]
     },
     {
         "company": "Home Team Science & Technology Agency (HTX)",
         "title": "Data Science Intern",
         "duration": "Jan. 2023 - May 2023",
         "description": "I built a feature for a web-app which allows non-technical users to train a neural network with few-shot learning for effective text classification. I also built a feature for users to quickly search through a text database using fulltext indexes.",
-        "tech": "PyTorch, React, FastAPI, SQL"
+        "tech": "PyTorch, React, FastAPI, SQL",
+        "techDetails": [
+            {
+                "detailTitle": "DIY Text Classification",
+                "detailDescription": [
+                    "Coming soon."
+                ]
+            },
+            {
+                "detailTitle": "Text Database Search",
+                "detailDescription": [
+                    "Coming soon."
+                ]
+            }
+        ]
     },
     {
         "company": "NUS Institute of Operations Research & Analytics",
         "title": "Research Assistant (Data Science)",
         "duration": "Apr. 2022 - Dec. 2022",
-        "description": "I developed novel methods to process textual data to improve classification accuracy.",
-        "tech": "scikit-learn, Matplotlib, PyTorch"
+        "description": "I developed novel methods to process textual data to improve classification accuracy for a listed medical device company (ResMed).",
+        "tech": "scikit-learn, Matplotlib, PyTorch",
+        "techDetails": []
     },
     {
         "company": "SUPESU",
         "title": "Full Stack Developer Intern",
         "duration": "Dec. 2021 - Aug. 2022",
         "description": "I developed a Shopify app which uses AI to recommend clothing sizes to customers given their body dimensions. The app also has an admin panel for merchants to fine-tune the recommendation logic.",
-        "tech": "MongoDB, ExpressJS, React, GraphQL, scikit-learn, R"
+        "tech": "MongoDB, ExpressJS, React, GraphQL, scikit-learn, R",
+        "techDetails": []
     },
     {
         "company": "NTUC LearningHub",
         "title": "Data Analyst Intern",
         "duration": "May. 2022 - Jul. 2022",
         "description": "I maintained Tableau dashboards and conducted database migration.",
-        "tech": "SQL, Tableau, Python"
+        "tech": "SQL, Tableau, Python",
+        "techDetails": []
     }
 ]
