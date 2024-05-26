@@ -36,7 +36,7 @@ const ExperienceCard = ({ company, title, duration, description, tech, techDetai
             </CardHeader>
             <CardContent>
                 {description}
-                <Accordion type="single" collapsible className="w-full">
+                <Accordion type="single" collapsible className="w-full mt-4">
                     {
                         techDetails.map((td, idx) => 
                             <AccordionItem value={td.detailTitle} key={idx}>
