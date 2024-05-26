@@ -35,8 +35,8 @@
             {
                 "detailTitle": "Product Analytics for MySingtel App (MSTA)",
                 "detailDescription": [
-                    "I was in charge of analysing customer behavior data on MSTA using FullStory, a data platform which tracks in-app interactions. The main goal was to derive insights to ultimately enhance user experience in the roaming funnel and increase conversion rates.",
-                    "Using process mining, I modelled user behavior patterns as a Directly-Follows Graph (DFG) and identified the most common user flows within the roaming funnel, which I used to identify the key interactions preceding drop-offs as potential pain points which deterred users from converting. Next, I scraped Singtel's social media pages and app store reviews and conducted topic modelling to identify common themes for customer complaints related to roaming.",
+                    "I was in charge of analysing customer behavior data on MSTA using FullStory, a data platform which tracks in-app interactions. The main goal was to derive insights to enhance user experience in the roaming funnel and increase conversion rates.",
+                    "Using process mining, I modelled user behavior patterns in the roaming funnel as a Directly-Follows Graph (DFG) and identified pain points which were likely to cause drop-offs. Next, I scraped Singtel's social media pages and app store reviews and conducted topic modelling to identify common themes for customer complaints related to roaming.",
                     "With this, I worked with UI designers and software engineers to design an enhanced roaming funnel UI which sought to address the identified pain points. Research findings and the proposed redesign were presented to senior leaders to seek approval for an A/B test to measure the effectiveness."
                 ]
             },
@@ -44,7 +44,7 @@
                 "detailTitle": "Real-Time Coupon Allocation POC",
                 "detailDescription": [
                     "Inspired by a white-paper by AliBaba researchers, I spearheaded an initiative to develop a POC for an AI-powered real-time coupon allocation system to boost conversion rate on the Singtel app's roaming funnel.",
-                    "The system works by predicting a user's conversion probability given each available coupon type based on their behavior within the roaming funnel (i.e which buttons they tapped, how long they spend on a screen, etc), and then applying linear programming to determine the optimal coupon allocation strategy which maximises total conversion while minimising total cost. Since the allocation is done in real-time, an online linear-programming strategy had to be used.",
+                    "The system works by predicting a user's conversion probability given each available coupon type based on their behavior within the roaming funnel (i.e which buttons they tapped, how long they spend on a screen, etc), and then applying linear programming to determine the optimal coupon allocation strategy. Since the allocation is done in real-time, an online linear-programming strategy had to be used.",
                     "For conversion probability prediction, I trained an AI model using customer behavior data retrieved from FullStory. I experimented with various algorithms, including Time-Aware LSTMs, transformer networks, and gradient boosting, to determine the best model. Next, to develop the online linear programming model, I implemented an algorithm introduced in another white-paper which proposed calculating thresholds based on the dual solution of the offline LP problem; these thresholds can then be used to determine the solution for the primal problem in an online manner.",
                     "Finally, I architectured a solution to allow the Singtel app to interface with the system and developed a POC using FastAPI and React Native which was presented to senior leaders."
                 ]
